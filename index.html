@@ -1,0 +1,153 @@
+<html>
+<head>
+    <title>Exclusivo Plans</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .btn-animate {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .btn-animate:hover {
+            transform: scale(1.05);
+            background-color: #1e40af; /* Darker blue for hover effect */
+        }
+        .social-btn {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .social-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .plan-box {
+            transition: transform 0.3s ease;
+        }
+        .plan-box:hover {
+            transform: scale(0.95); /* Zoom out effect */
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+    <!-- Navigation Menu -->
+    <nav class="bg-blue-800 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold">| Exclusivo |</div>
+            <div class="space-x-4">
+                <a href="#home" class="hover:text-blue-400">Início</a>
+                <a href="supportpaylink@icloud.com" class="hover:text-blue-400">Suporte</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto py-12 px-4">
+        <div id="home" class="text-center mb-8">
+            <h1 class="text-3xl font-bold">Confira nossa <span class="text-blue-400">tabela de planos</span> que estão disponíveis para assinatura.</h1>
+        </div>
+        <div id="plans" class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
+            <!-- Plano Básico+ -->
+            <div class="bg-blue-600 text-white rounded-lg shadow-lg p-6 w-full md:w-64 plan-box">
+                <div class="text-center mb-4">
+                    <h2 class="text-xl font-bold">Plano Plus</h2>
+                    <p class="text-gray-200">Acesso ao conteúdo de streaming por um preço acessível.</p>
+                </div>
+                <div class="text-center mb-4">
+                    <p class="text-3xl font-bold">R$17,90/mês</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2">O que está incluso?</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Qualidade 720p</li>
+                        <li>Globoplay incluso</li>
+                        <li>Suporte via E-mail</li>
+                        <li>Atualização Prioritária</li>
+                        <li>Pacote interativo incluso</li>
+                        <li>+ de 6 streamings</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/559299652961" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                </div>
+            </div>
+            <!-- Plano Comfort+ -->
+            <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 w-full md:w-64 relative plan-box">
+                <div class="absolute top-0 right-0 bg-yellow-400 text-black px-2 py-1 rounded-bl-lg">Popular</div>
+                <div class="text-center mb-4">
+                    <h2 class="text-xl font-bold">Plano Master</h2>
+                    <p class="text-gray-200">Plano mais Assinado do VIP .</p>
+                </div>
+                <div class="text-center mb-4">
+                    <p class="text-3xl font-bold">R$32,90/mês</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2">O que está incluso?</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Qualidade 720p e HD</li>
+                        <li>03 conexões simultâneas</li>
+                        <li>Assistir em qualquer aparelho</li>
+                        <li>Netflix incluso</li>
+                        <li>Atualização Prioritária</li>
+                        <li>+ de 10 streamings</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/559299652961t" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                </div>
+            </div>
+            <!-- Plano Premium+ -->
+            <div class="bg-blue-600 text-white rounded-lg shadow-lg p-6 w-full md:w-64 plan-box">
+                <div class="text-center mb-4">
+                    <h2 class="text-xl font-bold">Plano Anual </h2>
+                    <p class="text-gray-200">Qualidade de streaming superior e suporte ao cliente prioritário.</p>
+                </div>
+                <div class="text-center mb-4">
+                    <p class="text-3xl font-bold">R$58,90/mês</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2">O que está incluso?</h3>
+                    <ul class="list-disc list-inside text-gray-300">
+                        <li>Qualidade Full HD e 4K (+HDR)</li>
+                        <li>05 conexões simultâneas</li>
+                        <li>Assistir em qualquer aparelho</li>
+                        <li>Liberdade de Sugerir</li>
+                        <li>Atualização Prioritária</li>
+                    </ul>
+                </div>
+                <div class="text-center">
+                    <a href="https://wa.me/559299652961" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <h2 class="text-4xl font-bold">VIP <span class="text-blue-400">IS</span> BACK!</h2>
+        </div>
+        <div id="support" class="text-center mt-8">
+            <a href="https://wa.me/5592999652961" target="_blank" class="social-btn inline-block mx-2 p-2 rounded-full border border-white">
+                <i class="fab fa-whatsapp text-2xl"></i>
+            </a>
+            <a href="https://github.com/billgates" target="_blank" class="social-btn inline-block mx-2 p-2 rounded-full border border-white">
+                <i class="fab fa-github text-2xl"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="bg-blue-800 py-4 mt-12">
+        <div class="container mx-auto text-center">
+            <p class="text-white">© 2024 VIP Plans. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        function launchConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        }
+    </script>
+</body>
+</html>
