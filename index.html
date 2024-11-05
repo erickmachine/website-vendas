@@ -7,18 +7,20 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <style>
         body {
+
+            
             font-family: 'Roboto', sans-serif;
-            background-image: url('image/fundo-ok.jpg'); /* Substitua pela URL da sua imagem */
-            background-size: cover; /* Faz a imagem cobrir todo o fundo */
-            background-position: center; /* Centraliza a imagem */
-            background-repeat: no-repeat; /* Evita repetição da imagem */
+            background-image: url('image/fundo-ok.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
         }
         .btn-animate {
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
         .btn-animate:hover {
             transform: scale(1.05);
-            background-color: #9b960a; /* Cor de fundo mais escura para o efeito hover */
+            background-color: #9b960a; 
         }
         .social-btn {
             transition: transform 0.3s ease, background-color 0.3s ease;
@@ -31,7 +33,7 @@
             transition: transform 0.3s ease;
         }
         .plan-box:hover {
-            transform: scale(0.95); /* Efeito de zoom para fora */
+            transform: scale(0.95); 
         }
     </style>
 </head>
@@ -49,6 +51,43 @@
     <div class="container mx-auto py-12 px-4">
         <div id="home" class="text-center mb-8">
             <h1 class="text-3xl font-bold">Confira nossa <span class="text-blue-400">tabela de planos</span> que estão disponíveis para assinatura.</h1>
+                <!-- Mini Caixa de Presente -->
+    <div class="gift-box" onclick="drawNumber()">
+        🎁
+    </div>
+
+    <script>
+        function drawNumber() {
+            // Sorteia um número de 1 a 15
+            const number = Math.floor(Math.random() * 20) + 1;
+            if (number === 6) {
+            
+                launchConfetti();
+                alert("Parabéns! Você ganhou uma globoplay!");
+            } else {
+                alert("Número Sorteado foi: " + number);
+            }
+        }
+    </script>
+
+    <style>
+        .gift-box {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background-color: #edfa00;
+            border: 2px solid #0f00e5;
+            border-radius: 5px;
+            display: inline-block;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            text-align: center;
+            line-height: 50px;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
         </div>
         <div id="plans" class="flex flex-col md:flex-row justify-center space-y-8 md:space-y-0 md:space-x-8">
             <!-- Plano Básico+ -->
