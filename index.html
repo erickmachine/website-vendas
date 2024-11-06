@@ -11,6 +11,8 @@
     <style>
         body {
 
+        
+
             /* erick machine - developer code */
 
             
@@ -39,10 +41,12 @@
         }
         .plan-box:hover {
             transform: scale(0.95); 
+            
         }
     </style>
 </head>
 <body class="bg-black text-white">
+    
     <!-- Navigation Menu -->
     <nav class="bg-blue-800 p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -56,8 +60,73 @@
     </nav>
     <div class="container mx-auto py-12 px-4">
         <div id="home" class="text-center mb-8">
-            <h1 class="text-3xl font-bold">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> que estão disponíveis para assinatura.</h1>
+            <h1 class="text-3xl font-bold">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> que estão disponível</h1>
                 <!-- Mini Caixa de Presente -->
+
+
+                <script> 
+                    document.addEventListener('DOMContentLoaded', (event) => {
+                        // Set the date we're counting down to
+                        var countDownDate = new Date().getTime() + (30 * 24 * 60 * 60 * 1000); // 30 days from now
+            
+                        // Update the count down every 1 second
+                        var x = setInterval(function() {
+            
+                            // Get today's date and time
+                            var now = new Date().getTime();
+            
+                            // Find the distance between now and the count down date
+                            var distance = countDownDate - now;
+            
+                            // Time calculations for days, hours, minutes and seconds
+                            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+                            // Display the result in the elements with corresponding ids
+                            document.getElementById("days").innerHTML = days;
+                            document.getElementById("hours").innerHTML = hours;
+                            document.getElementById("minutes").innerHTML = minutes;
+                            document.getElementById("seconds").innerHTML = seconds;
+            
+                            // If the count down is over, write some text 
+                            if (distance < 0) {
+                                clearInterval(x);
+                                document.getElementById("days").innerHTML = "0";
+                                document.getElementById("hours").innerHTML = "0";
+                                document.getElementById("minutes").innerHTML = "0";
+                                document.getElementById("seconds").innerHTML = "0";
+                            }
+                        }, 1000);
+                    });
+                </script>
+            </head>
+            <body class="flex items-center justify-center min-h-screen">
+            
+                <div class="flex flex-col items-center">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="flex flex-col items-center justify-center w-16 h-16 border-2 border-white rounded-full text-white text-lg font-semibold">
+                            <div id="days">1</div>
+                            <div class="text-sm">D</div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-16 h-16 border-2 border-white rounded-full text-white text-lg font-semibold">
+                            <div id="hours">23</div>
+                            <div class="text-sm">H</div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-16 h-16 border-2 border-white rounded-full text-white text-lg font-semibold">
+                            <div id="minutes">58</div>
+                            <div class="text-sm">M</div>
+                        </div>
+                        <div class="flex flex-col items-center justify-center w-16 h-16 border-2 border-white rounded-full text-white text-lg font-semibold">
+                            <div id="seconds">18</div>
+                            <div class="text-sm">S</div>
+                        </div>
+                    </div>
+                    <button class="bg-yellow-500 text-black text-lg font-semibold py-2 px-4 rounded-full">
+                        OFERTA LIMITADA!
+                    </button>
+                </div>
                  
                 <div class="gift-box" onclick="drawNumber()">
                     🎁
@@ -99,6 +168,7 @@
         .gift-box:hover {
             transform: translateY(-60%); /* Move para cima ao passar o mouse */
         }
+        
         
     </style>
         </div>
@@ -183,6 +253,7 @@
         </div>
         <div class="text-center mt-12">
             <h2 class="text-4xl font-bold">VIP <span class="text-yellow-400">IS</span> BACK!</h2>
+            <script src="https://cdn.tailwindcss.com"></script>
         </div>
         <div class="container mx-auto py-12 px-4">
             <div class="text-center mt-8">
