@@ -54,42 +54,46 @@
             <h1 class="text-3xl font-bold">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> que estão disponíveis para assinatura.</h1>
                 <!-- Mini Caixa de Presente -->
                  
-    <div class="gift-box" onclick="drawNumber()">
-        🎁
-    </div>
-
-    <script>
-        function drawNumber() {
-            // Sorteia um número de 1 a 15
-            const number = Math.floor(Math.random() * 20) + 1;
-            if (number === 6) {
-            
-                launchConfetti();
-                alert("Parabéns! Você ganhou uma globoplay!");
-            } else {
-                alert("Número Sorteado foi: " + number);
-            }
-        }
+                <div class="gift-box" onclick="drawNumber()">
+                    🎁
+                </div>
+        
+                <script>
+                    function drawNumber() {
+                        // Sorteia um número de 1 a 20
+                        const number = Math.floor(Math.random() * 20) + 1;
+                        if (number === 6) {
+                            launchConfetti();
+                            alert("Parabéns! Você ganhou uma globoplay!");
+                        } else {
+                            alert("Número Sorteado foi: " + number);
+                        }
+                    }
     </script>
 
     <style>
          
-        .gift-box {
+         .gift-box {
             cursor: pointer;
-            width: 50px;
-            height: 50px;
+            width: 70px; /* Aumentei um pouco o tamanho */
+            height: 70px; /* Aumentei um pouco o tamanho */
             background-color: #dff800;
             border: 2px solid #fcfcfc;
             border-radius: 6px;
             display: inline-block;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            top: 50%; /* Centraliza verticalmente */
+            right: 20px; /* Distância da direita */
+            transform: translateY(-50%); /* Ajusta para centralizar */
             text-align: center;
-            line-height: 50px;
+            line-height: 70px; /* Ajusta para o tamanho da caixa */
             font-size: 24px;
             box-shadow: 0 4px 10px rgba(221, 255, 0, 0.3);
-            
+            transition: transform 0.3s ease; /* Adiciona transição */
+        }
+        .gift-box:hover {
+            transform: translateY(-60%); /* Move para cima ao passar o mouse */
+        }
         }
     </style>
         </div>
