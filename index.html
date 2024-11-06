@@ -20,14 +20,14 @@
         }
         .btn-animate:hover {
             transform: scale(1.05);
-            background-color: #9b960a; 
+            background-color: #ffffff; 
         }
         .social-btn {
             transition: transform 0.3s ease, background-color 0.3s ease;
         }
         .social-btn:hover {
             transform: scale(1.1);
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(167, 157, 15, 0.2);
         }
         .plan-box {
             transition: transform 0.3s ease;
@@ -43,15 +43,17 @@
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-bold"> Exclusivo Streamings </div>
             <div class="space-x-4">
-                <a href="#home" class="hover:text-blue-400">Início</a>
-                <a href="supportpaylink@icloud.com" class="hover:text-blue-400">Suporte</a>
+                <a href="#home" class="hover:text-yellow-400">| Início</a>
+                <a href="supportpaylink@icloud.com" class="hover:text-yellow-400">|      Suporte</a>
+                <a href="https://wa.me/5592999652961" class="hover:text-yellow-400">|    Sorteio</a>
             </div>
         </div>
     </nav>
     <div class="container mx-auto py-12 px-4">
         <div id="home" class="text-center mb-8">
-            <h1 class="text-3xl font-bold">Confira nossa <span class="text-blue-400">tabela de planos</span> que estão disponíveis para assinatura.</h1>
+            <h1 class="text-3xl font-bold">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> que estão disponíveis para assinatura.</h1>
                 <!-- Mini Caixa de Presente -->
+                 
     <div class="gift-box" onclick="drawNumber()">
         🎁
     </div>
@@ -71,13 +73,14 @@
     </script>
 
     <style>
+         
         .gift-box {
             cursor: pointer;
             width: 50px;
             height: 50px;
-            background-color: #edfa00;
-            border: 2px solid #0f00e5;
-            border-radius: 5px;
+            background-color: #dff800;
+            border: 2px solid #fcfcfc;
+            border-radius: 6px;
             display: inline-block;
             position: fixed;
             bottom: 20px;
@@ -85,7 +88,8 @@
             text-align: center;
             line-height: 50px;
             font-size: 24px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(221, 255, 0, 0.3);
+            
         }
     </style>
         </div>
@@ -108,17 +112,19 @@
                         <li>Atualização Prioritária</li>
                         <li>Pacote interativo incluso</li>
                         <li>+ de 6 streamings</li>
+                        <li>Bônus Extras </li>
+
                     </ul>
                 </div>
                 <div class="text-center">
-                    <a href="https://exclusivovip.netlify.app/" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                    <a href="https://exclusivovip.netlify.app/" class="bg-yellow-400 text-black py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
                 </div>
             </div>
             <!-- Plano Comfort+ -->
             <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 w-full md:w-64 relative plan-box">
                 <div class="absolute top-0 right-0 bg-yellow-400 text-black px-2 py-1 rounded-bl-lg">Popular</div>
                 <div class="text-center mb-4">
-                    <h2 class="text-xl font-bold">Plano Master</h2>
+                    <h2 class="text-yellow-400 font-bold">Plano Master</h2>
                     <p class="text-gray-200">Plano mais Assinado do VIP.</p>
                 </div>
                 <div class="text-center mb-4">
@@ -132,11 +138,14 @@
                         <li>Assistir em qualquer aparelho</li>
                         <li>Netflix incluso</li>
                         <li>Atualização Prioritária</li>
+                        <li>Bônus Extras </li>
+                        <li>Atualização Prioritária </li>
                         <li>+ de 10 streamings</li>
+
                     </ul>
                 </div>
                 <div class="text-center">
-                    <a href="https://exclusivovip.netlify.app/" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                    <a href="https://exclusivovip.netlify.app/" class="bg-yellow-400 text-black py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
                 </div>
             </div>
             <!-- Plano Premium+ -->
@@ -159,12 +168,12 @@
                     </ul>
                 </div>
                 <div class="text-center">
-                    <a href="https://exclusivovip.netlify.app/" class="bg-black text-white py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
+                    <a href="https://exclusivovip.netlify.app/" class="bg-yellow-400 text-black py-2 px-4 rounded-full btn-animate" onclick="launchConfetti()">Assine agora</a>
                 </div>
             </div>
         </div>
         <div class="text-center mt-12">
-            <h2 class="text-4xl font-bold">VIP <span class="text-blue-400">IS</span> BACK!</h2>
+            <h2 class="text-4xl font-bold">VIP <span class="text-yellow-400">IS</span> BACK!</h2>
         </div>
         <div class="container mx-auto py-12 px-4">
             <div class="text-center mt-8">
@@ -176,37 +185,37 @@
                 <div class="bg-blue-600 text-white rounded-lg shadow-lg p-6 w-full md:w-64">
                     <h2 class="text-xl font-bold text-center">Plano Plus</h2>
                     <ul class="list-disc list-inside text-gray-300 mt-4">
-                        <li>> 🛍️ Globoplay 
-                            > 🛍️ Crunchyroll  
-                            > 🛍️ Prime Video 
-                            > 🛍️ Deezer 
-                            > 🛍️ Premiere  
-                            > 🛍️ Canva Pro 
-                            > 🛍️ Max
-                            > 🛍️ Tidal</li>
+                        <li>Globoplay 
+                            Crunchyroll  
+                            Prime Video 
+                            Deezer 
+                            Premiere  
+                            Canva Pro 
+                             Max
+                            Tidal
+                        </li>
                     </ul>
                 </div>
                 <!-- Catálogo do Plano Master -->
                 <div class="bg-blue-800 text-white rounded-lg shadow-lg p-6 w-full md:w-64">
                     <h2 class="text-xl font-bold text-center">Plano Master</h2>
                     <ul class="list-disc list-inside text-gray-300 mt-4">
-                        <li> > 🛍️ Globoplay 
-                            > 🛍️ Netflix 
-                            > 🛍️ Premiere 
-                            > 🛍️ Discovery 
-                            > 🛍️ Spotify 
-                            > 🛍️ Prime Video 
-                            > 🛍️ Crunchyroll 
-                            > 🛍️ Paramount 
-                            > 🛍️ Star Plus 
-                            > 🛍️ YouTube 
-                            > 🛍️ Canva 
-                            > 🛍️ Max
-                            > 🛍️ Claro Tv 
-                            > 🛍️ NBA 
-                            > 🛍️ IPTV 
-                            > 🛍️ Viki Rakuten
-                            > 🛍️ Sky +
+                        <li>Globoplay 
+                            Netflix 
+                            Premiere 
+                            Discovery 
+                            Spotify 
+                            Prime Video 
+                            Crunchyroll 
+                            Paramount 
+                            Star Plus 
+                            YouTube 
+                            Canva 
+                            Max
+                            Claro Tv 
+                            NBA 
+                            Viki Rakuten
+                            Sky +
                         </li>
                     </ul>
                 </div>
@@ -214,29 +223,28 @@
                 <div class="bg-blue-600 text-white rounded-lg shadow-lg p-6 w-full md:w-64">
                     <h2 class="text-xl font-bold text-center">Plano Anual</h2>
                     <ul class="list-disc list-inside text-gray-300 mt-4">
-                        <li>> 🛍️ Globoplay + Canais
-                            > 🛍️ Netflix Premium
-                            > 🛍️ Premiere 
-                            > 🛍️ Discovery 
-                            > 🛍️ Spotify 
-                            > 🛍️ Prime Video 
-                            > 🛍️ Crunchyroll 
-                            > 🛍️ Paramount 
-                            > 🛍️ Star Plus 
-                            > 🛍️ YouTube 
-                            > 🛍️ Canva 
-                            > 🛍️ Disney Plus
-                            > 🛍️ Max
-                            > 🛍️ Claro Tv 
-                            > 🛍️ NBA 
-                            > 🛍️ IPTV 
-                            > 🛍️ Viki Rakuten
-                            > 🛍️ Directv Go
-                            > 🛍️ Telecine
-                            > 🛍️ My Family
-                            > 🛍️ Gift Cards extras
-                            > 🛍️ Deezer 
-                            > 🛍️ Sky +
+                        <li>Globoplay + Canais
+                            Netflix Premium
+                            Premiere 
+                            Discovery 
+                            Spotify 
+                            Prime Video 
+                            Crunchyroll 
+                            Paramount 
+                            Star Plus 
+                            YouTube 
+                            Canva 
+                            Disney Plus
+                            Max
+                            Claro Tv 
+                            NBA 
+                            Viki Rakuten
+                            Directv Go
+                            Telecine
+                            My Family
+                            Gift Cards extras
+                            Deezer 
+                            Sky +
                         </li>
                     </ul>
                 </div>
