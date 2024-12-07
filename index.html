@@ -3,84 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusivo Plans</title>
+    <title>Exclusivo Plans - Streaming de Qualidade</title>
+    <meta name="description" content="Descubra os melhores planos de streaming com Exclusivo Plans. Qualidade superior, variedade de conteúdo e preços acessíveis.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .gradient-bg {
             background: linear-gradient(to bottom, #7226ff, #160078, #010030);
         }
-        .logo-rain {
-            position: fixed;
-            top: -50px;
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            padding: 1rem;
+        }
+        .image-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-item:hover {
+            transform: scale(1.05);
+        }
+        .image-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            overflow: hidden;
-            pointer-events: none;
-            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
-        .logo {
-            position: absolute;
-            width: 30px;
-            height: 30px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            opacity: 0.5;
-            animation: fall linear infinite;
-        }
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
+        .image-item:hover .image-overlay {
+            transform: translateY(0);
         }
     </style>
 </head>
-<body class="gradient-bg text-white">
-    <div class="logo-rain" id="logoRain"></div>
-
-    <nav class="bg-blue-900 bg-opacity-50 p-4 backdrop-filter backdrop-blur-md">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold">Exclusivo Streamings</div>
-            <div class="space-x-4">
-                <a href="#home" class="hover:text-yellow-400 transition duration-300">Início</a>
-                <a href="mailto:supportpaylink@icloud.com" class="hover:text-yellow-400 transition duration-300">Suporte</a>
-                <a href="https://wa.me/5592999652961" class="hover:text-yellow-400 transition duration-300">Sorteio</a>
+<body class="gradient-bg text-white min-h-screen flex flex-col">
+    <header class="bg-blue-900 bg-opacity-50 backdrop-filter backdrop-blur-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex flex-wrap justify-between items-center">
+                <div class="text-2xl font-bold">Exclusivo Streamings</div>
+                <button id="menu-toggle" class="lg:hidden text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+                <div id="menu" class="hidden lg:flex w-full lg:w-auto mt-4 lg:mt-0">
+                    <div class="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
+                        <a href="#home" class="hover:text-yellow-400 transition duration-300">Início</a>
+                        <a href="#plans" class="hover:text-yellow-400 transition duration-300">Planos</a>
+                        <a href="#catalogs" class="hover:text-yellow-400 transition duration-300">Catálogos</a>
+                        <a href="#image-gallery" class="hover:text-yellow-400 transition duration-300">Galeria</a>
+                        <a href="#testimonials" class="hover:text-yellow-400 transition duration-300">Depoimentos</a>
+                        <a href="#faq" class="hover:text-yellow-400 transition duration-300">FAQ</a>
+                        <a href="mailto:supportpaylink@icloud.com" class="hover:text-yellow-400 transition duration-300">Suporte</a>
+                        <a href="https://wa.me/5592999652961" class="hover:text-yellow-400 transition duration-300">Sorteio</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <main class="container mx-auto py-12 px-4">
-        <section id="home" class="text-center mb-16">
-            <h1 class="text-4xl font-bold mb-4">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> disponível</h1>
+    <main class="container mx-auto py-12 px-4 flex-grow">
+        <section id="home" class="text-center mb-16 relative">
+            <h1 class="text-4xl md:text-5xl font-bold mb-8 animate-float">Confira nossa <span class="text-yellow-400">Tabela de Planos</span> disponível</h1>
             
-            <div id="countdown" class="flex justify-center items-center space-x-4 mb-8">
+            <div id="countdown" class="flex flex-wrap justify-center items-center gap-4 mb-8">
                 <!-- Countdown will be filled by JavaScript -->
             </div>
             
-            <button class="bg-yellow-500 text-black text-lg font-semibold py-2 px-6 rounded-full transform hover:scale-105 transition duration-300">
+            <button class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black text-lg font-semibold py-3 px-8 rounded-full transform hover:scale-105 transition duration-300 shadow-lg">
                 OFERTA LIMITADA!
             </button>
         </section>
 
-        <section id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <!-- Plans will be filled by JavaScript -->
         </section>
 
-        <section class="text-center mt-16">
-            <h2 class="text-4xl font-bold mb-8">VIP <span class="text-yellow-400">IS</span> BACK!</h2>
-            <div id="catalogs" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section id="catalogs" class="text-center mt-16">
+            <h2 class="text-4xl font-bold mb-8 animate-float">VIP <span class="text-yellow-400">IS</span> BACK!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Catalogs will be filled by JavaScript -->
+            </div>
+        </section>
+
+        <section id="image-gallery" class="mt-16">
+            <h2 class="text-4xl font-bold mb-8 text-center">Você irá ter Acesso </h2>
+            <div class="image-gallery">
+                <!-- Images will be added here by JavaScript -->
+            </div>
+        </section>
+
+        <section id="testimonials" class="mt-16">
+            <h2 class="text-4xl font-bold mb-8 text-center">O que nossos clientes dizem</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonials will be filled by JavaScript -->
+            </div>
+        </section>
+
+        <section id="faq" class="mt-16">
+            <h2 class="text-4xl font-bold mb-8 text-center">Perguntas Frequentes</h2>
+            <div class="space-y-4">
+                <!-- FAQ items will be filled by JavaScript -->
             </div>
         </section>
     </main>
 
-    <div class="fixed bottom-4 right-4">
-        <button id="giftBox" class="w-16 h-16 bg-yellow-400 text-3xl rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300">
+    <div class="fixed bottom-4 right-4 z-50">
+        <button id="giftBox" class="w-16 h-16 bg-yellow-400 text-3xl rounded-full shadow-lg flex items-center justify-center transform hover:scale-110 transition duration-300 animate-bounce">
             🎁
         </button>
     </div>
@@ -113,20 +173,20 @@
 
             const countdownElement = document.getElementById('countdown');
             countdownElement.innerHTML = `
-                <div class="flex flex-col items-center justify-center w-20 h-20 border-2 border-white rounded-full">
-                    <div class="text-2xl font-semibold">${days}</div>
+                <div class="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border-2 border-white rounded-full glass-effect">
+                    <div class="text-xl sm:text-2xl font-semibold">${days}</div>
                     <div class="text-xs uppercase">dias</div>
                 </div>
-                <div class="flex flex-col items-center justify-center w-20 h-20 border-2 border-white rounded-full">
-                    <div class="text-2xl font-semibold">${hours}</div>
+                <div class="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border-2 border-white rounded-full glass-effect">
+                    <div class="text-xl sm:text-2xl font-semibold">${hours}</div>
                     <div class="text-xs uppercase">horas</div>
                 </div>
-                <div class="flex flex-col items-center justify-center w-20 h-20 border-2 border-white rounded-full">
-                    <div class="text-2xl font-semibold">${minutes}</div>
+                <div class="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border-2 border-white rounded-full glass-effect">
+                    <div class="text-xl sm:text-2xl font-semibold">${minutes}</div>
                     <div class="text-xs uppercase">minutos</div>
                 </div>
-                <div class="flex flex-col items-center justify-center w-20 h-20 border-2 border-white rounded-full">
-                    <div class="text-2xl font-semibold">${seconds}</div>
+                <div class="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 border-2 border-white rounded-full glass-effect">
+                    <div class="text-xl sm:text-2xl font-semibold">${seconds}</div>
                     <div class="text-xs uppercase">segundos</div>
                 </div>
             `;
@@ -135,26 +195,34 @@
         setInterval(updateCountdown, 1000);
         updateCountdown(); // Initial call
 
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
         // Plans
         const plans = [
-            { name: "Plus", price: "17,90", color: "bg-blue-600", features: ["Qualidade 720p", "Globoplay incluso", "Suporte via E-mail", "Atualização Prioritária", "Pacote interativo incluso", "+ de 6 streamings", "Bônus Extras"] },
-            { name: "Master", price: "32,90", color: "bg-blue-800", features: ["Qualidade 720p e HD", "03 conexões simultâneas", "Assistir em qualquer aparelho", "Netflix incluso", "Atualização Prioritária", "Bônus Extras", "+ de 10 streamings"], popular: true },
-            { name: "Anual", price: "89,90", color: "bg-blue-600", features: ["Qualidade Full HD e 4K (+HDR)", "05 conexões simultâneas", "Assistir em qualquer aparelho", "Liberdade de Sugerir", "Atualização Prioritária"] },
+            { name: "Plus 30 dias", price: "17,90", color: "bg-blue-600", features: ["Qualidade 720p", "Globoplay incluso", "Suporte via E-mail", "Atualização Prioritária", "Pacote interativo incluso", "Bônus Extras","+ de 6 streamings"] },
+            { name: "Master 30 dias", price: "32,90", color: "bg-blue-800", features: ["Qualidade 720p e HD", "03 conexões simultâneas", "Assistir em qualquer aparelho", "Netflix incluso", "Atualização Prioritária", "Bônus Extras", "+ de 10 streamings"], popular: true },
+            { name: "Star 365 dias", price: "7,49", color: "bg-blue-600", features: ["Qualidade Full HD e 4K (+HDR)", "05 conexões simultâneas", "Assistir em qualquer aparelho", "Liberdade de Sugerir", "Atualização Prioritária", "Bônus Extras", "+ de 12 streamings"] },
         ];
 
         const plansElement = document.getElementById('plans');
         plans.forEach(plan => {
             const planElement = document.createElement('div');
-            planElement.className = `${plan.color} rounded-lg shadow-lg p-6 relative transform hover:scale-105 transition duration-300`;
+            planElement.className = `${plan.color} rounded-lg shadow-lg p-6 relative transform hover:scale-105 transition duration-300 glass-effect`;
             planElement.innerHTML = `
                 ${plan.popular ? '<div class="absolute top-0 right-0 bg-yellow-400 text-black px-2 py-1 rounded-bl-lg">Popular</div>' : ''}
                 <h2 class="text-2xl font-bold mb-2">${plan.name}</h2>
-                <p class="text-3xl font-bold mb-4">R$${plan.price}</p>
+                <p class="text-3xl font-bold mb-4">R$${plan.price}/mês</p>
                 <ul class="list-disc list-inside mb-6">
                     ${plan.features.map(feature => `<li class="mb-1">${feature}</li>`).join('')}
                 </ul>
-                <a href="https://exclusivovip.netlify.app/" class="block w-full bg-yellow-400 text-black py-2 px-4 rounded-full text-center font-semibold hover:bg-yellow-300 transition duration-300">
-                    Assine agora
+                <a href="https://exclusivovip.netlify.app/" class="block w-full bg-gradient-to-r from-yellow-400 to-yellow-600 text-black py-3 px-6 rounded-full text-center font-bold text-lg hover:from-yellow-500 hover:to-yellow-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95">
+                    ASSINE AGORA
                 </a>
             `;
             plansElement.appendChild(planElement);
@@ -164,13 +232,13 @@
         const catalogs = [
             { name: "Plus", services: ["Globoplay", "Crunchyroll", "Prime Video", "Deezer", "Premiere", "Canva Pro", "Max", "Tidal"] },
             { name: "Master", services: ["Globoplay", "Netflix", "Premiere", "Discovery", "Spotify", "Prime Video", "Crunchyroll", "Paramount", "Star Plus", "YouTube", "Canva", "Max", "Claro Tv", "NBA", "Viki Rakuten", "Sky +"] },
-            { name: "Anual", services: ["Globoplay + Canais", "Netflix Premium", "Premiere", "Discovery", "Spotify", "Prime Video", "Crunchyroll", "Paramount", "Star Plus", "YouTube", "Canva", "Disney Plus", "Max", "Claro Tv", "NBA", "Viki Rakuten", "Directv Go", "Telecine", "My Family", "Gift Cards extras", "Deezer", "Sky +"] },
+            { name: "Anual", services: ["Globoplay + Canais", "Netflix Premium","Premiere", "Discovery", "Spotify", "Prime Video", "Crunchyroll", "Paramount","Star Plus", "YouTube", "Canva", "Disney Plus", "Max", "Claro Tv", "NBA", "Viki Rakuten", "Directv Go", "Telecine", "My Family", "Gift Cards extras", "Deezer", "Sky +"] },
         ];
 
-        const catalogsElement = document.getElementById('catalogs');
+        const catalogsElement = document.getElementById('catalogs').querySelector('div');
         catalogs.forEach(catalog => {
             const catalogElement = document.createElement('div');
-            catalogElement.className = 'bg-blue-900 bg-opacity-50 rounded-lg shadow-lg p-6';
+            catalogElement.className = 'bg-blue-900 bg-opacity-50 rounded-lg shadow-lg p-6 glass-effect';
             catalogElement.innerHTML = `
                 <h3 class="text-xl font-bold mb-4">${catalog.name}</h3>
                 <ul class="list-disc list-inside">
@@ -178,6 +246,65 @@
                 </ul>
             `;
             catalogsElement.appendChild(catalogElement);
+        });
+
+        // Image Gallery
+        const images = [
+            { src: 'image/netflix.png', alt: 'Netflix Premium' },
+            { src: 'image/disneyyy.png', alt: 'Disney Plus' },
+            { src: 'image/spotifyy.png', alt: 'Spotify Premium' },
+            { src: 'image/primevideo.png', alt: 'Prime Video' },
+        ];
+
+        const imageGalleryElement = document.querySelector('#image-gallery .image-gallery');
+        images.forEach(image => {
+            const imageElement = document.createElement('div');
+            imageElement.className = 'image-item glass-effect';
+            imageElement.innerHTML = `
+                <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                <div class="image-overlay">
+                    <p>${image.alt}</p>
+                </div>
+            `;
+            imageGalleryElement.appendChild(imageElement);
+        });
+
+        // Testimonials
+        const testimonials = [
+            { name: "João Silva", comment: "Excelente serviço! A qualidade do streaming é incrível." },
+            { name: "Maria Santos", comment: "O plano Master vale cada centavo. Recomendo a todos!" },
+            { name: "Pedro Oliveira", comment: "Suporte ao cliente de primeira classe. Sempre resolvem meus problemas rapidamente." },
+            { name: "Ana Rodrigues", comment: "A variedade de conteúdo é impressionante. Nunca fico sem algo para assistir." }
+        ];
+
+        const testimonialsElement = document.getElementById('testimonials').querySelector('div');
+        testimonials.forEach(testimonial => {
+            const testimonialElement = document.createElement('div');
+            testimonialElement.className = 'bg-blue-900 bg-opacity-50 p-6 rounded-lg shadow-lg glass-effect';
+            testimonialElement.innerHTML = `
+                <p class="mb-4">"${testimonial.comment}"</p>
+                <p class="font-semibold">- ${testimonial.name}</p>
+            `;
+            testimonialsElement.appendChild(testimonialElement);
+        });
+
+        // FAQ
+        const faqs = [
+            { question: "Como posso assinar um plano?", answer: "Você pode assinar um plano clicando no botão 'ASSINE AGORA' do plano desejado e seguindo as instruções na página de checkout." },
+            { question: "Posso cancelar minha assinatura a qualquer momento?", answer: "Sim, você pode cancelar sua assinatura a qualquer momento sem custos adicionais." },
+            { question: "Quais dispositivos são compatíveis?", answer: "Nossos serviços são compatíveis com smartphones, tablets, smart TVs, computadores e diversos outros dispositivos." },
+            { question: "Como funciona o suporte ao cliente?", answer: "Oferecemos suporte via e-mail e WhatsApp. Nossa equipe está disponível para ajudar com quaisquer problemas ou dúvidas." }
+        ];
+
+        const faqElement = document.getElementById('faq').querySelector('div');
+        faqs.forEach(faq => {
+            const faqItemElement = document.createElement('div');
+            faqItemElement.className = 'bg-blue-900 bg-opacity-50 p-6 rounded-lg shadow-lg glass-effect';
+            faqItemElement.innerHTML = `
+                <h3 class="font-semibold mb-2">${faq.question}</h3>
+                <p>${faq.answer}</p>
+            `;
+            faqElement.appendChild(faqItemElement);
         });
 
         // Gift Box
@@ -195,7 +322,7 @@
             }
         });
 
-        // Confetti for "Assine agora" buttons
+        // Confetti for "ASSINE AGORA" buttons
         document.querySelectorAll('a[href="https://exclusivovip.netlify.app/"]').forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -210,29 +337,30 @@
             });
         });
 
-        // Streaming Logo Rain
-        const logoRain = document.getElementById('logoRain');
-        const logos = [
-            '/placeholder.svg?height=30&width=30', // Netflix
-            '/placeholder.svg?height=30&width=30', // Disney+
-            '/placeholder.svg?height=30&width=30', // Prime Video
-            '/placeholder.svg?height=30&width=30'  // Crunchyroll
-        ];
-
-        function createLogo() {
-            const logo = document.createElement('div');
-            logo.className = 'logo';
-            logo.style.left = `${Math.random() * 100}vw`;
-            logo.style.animationDuration = `${Math.random() * 3 + 2}s`;
-            logo.style.backgroundImage = `url(${logos[Math.floor(Math.random() * logos.length)]})`;
-            logoRain.appendChild(logo);
-
-            logo.addEventListener('animationend', () => {
-                logo.remove();
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-        }
+        });
 
-        setInterval(createLogo, 300);
+        // Intersection Observer for fade-in animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('#plans > div, #catalogs > div, #image-gallery .image-item, #testimonials > div > div, #faq > div > div').forEach(el => {
+            el.classList.add('transition', 'duration-1000', 'opacity-0');
+            observer.observe(el);
+        });
     </script>
 </body>
 </html>
