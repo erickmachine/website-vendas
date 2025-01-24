@@ -362,9 +362,35 @@
         .faq-answer.show {
             display: block;
         }
+        .discount-banner {
+            background-color: #EAB308;
+            color: #000;
+            text-align: center;
+            padding: 0.5rem;
+            font-weight: bold;
+            position: relative;
+            overflow: hidden;
+        }
+        .discount-banner::before, .discount-banner::after {
+            content: "🎉";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        .discount-banner::before {
+            left: 1rem;
+        }
+        .discount-banner::after {
+            right: 1rem;
+        }
     </style>
 </head>
 <body class="gradient-bg text-white min-h-screen flex flex-col">
+    <div class="discount-banner">
+        Use o cupom <span class="text-red-600">DESCONTO30</span> e ganhe 30% de desconto em qualquer plano!
+    </div>
+
     <header class="bg-blue-900 bg-opacity-50 backdrop-filter backdrop-blur-md sticky top-0 z-50">
         <nav class="container mx-auto px-4 py-3">
             <div class="flex flex-wrap justify-between items-center">
@@ -427,6 +453,12 @@
 
         <section id="plans" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             <!-- Plans will be filled by JavaScript -->
+        </section>
+
+        <section class="my-16 bg-yellow-400 text-black p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold mb-4">Oferta Especial!</h2>
+            <p class="text-xl mb-4">Use o cupom <span class="font-bold">DESCONTO30</span> durante o checkout e aproveite 30% de desconto em qualquer plano!</p>
+            <p class="text-lg">Não perca essa oportunidade de economizar e desfrutar do melhor conteúdo de streaming.</p>
         </section>
 
         <section id="comparison" class="mb-16">
@@ -836,7 +868,10 @@ menuToggle.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-
+        // Add a function to apply the discount
+        function applyDiscount(price) {
+            return (price * 0.7).toFixed(2); // 30% discount
+        }
 
         const planSelect = document.getElementById('plan');
         const durationInput = document.getElementById('duration');
@@ -849,7 +884,8 @@ menuToggle.addEventListener('click', () => {
             if (selectedPlan && duration) {
                 const price = parseFloat(selectedPlan.price.replace(',', '.'));
                 const total = (price * duration).toFixed(2);
-                totalInput.value = `R$ ${total.replace('.', ',')}`;
+                const discountedTotal = applyDiscount(total);
+                totalInput.value = `R$ ${discountedTotal.replace('.', ',')} (com desconto)`;
             }
         });
 
