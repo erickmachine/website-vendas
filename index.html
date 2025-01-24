@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusiv - Streaming de Qualidade</title>
+    <title>Exclusivo - Streaming de Qualidade</title>
     <meta name="description" content="Descubra os melhores planos de streaming com Exclusivo Plans. Qualidade superior, variedade de conteúdo e preços acessíveis.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -579,58 +579,66 @@
                     <i class="fab fa-github text-2xl"></i>
                 </a>
             </div>
-            <p class="text-sm">© 2024 VIP Plans. Todos os direitos reservados.</p>
+            <p class="text-sm">© 2025 Exclusivo Streamings. Todos os direitos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Countdown Timer
-        function updateCountdown() {
-            const countDownDate = new Date().getTime() + 15 * 24 * 60 * 60 * 1000; // 15 days from now
-            const now = new Date().getTime();
-            const distance = countDownDate - now;
+     // Countdown Timer
+const countDownDate = new Date().getTime() + 7 * 24 * 60 * 60 * 1000; // Define a data de contagem regressiva uma vez
 
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+function updateCountdown() {
+    const now = new Date().getTime();
+    const distance = countDownDate - now;
 
-            const countdownElement = document.getElementById('countdown');
-            countdownElement.innerHTML = `
-                <div class="countdown-item">
-                    <div class="countdown-value">${days}</div>
-                    <div class="countdown-label">dias</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value">${hours}</div>
-                    <div class="countdown-label">horas</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value">${minutes}</div>
-                    <div class="countdown-label">minutos</div>
-                </div>
-                <div class="countdown-item">
-                    <div class="countdown-value">${seconds}</div>
-                    <div class="countdown-label">segundos</div>
-                </div>
-            `;
-        }
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-        setInterval(updateCountdown, 1000);
-        updateCountdown(); // Initial call
+    const countdownElement = document.getElementById('countdown');
+    countdownElement.innerHTML = `
+        <div class="countdown-item">
+            <div class="countdown-value">${days}</div>
+            <div class="countdown-label">dias</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value">${hours}</div>
+            <div class="countdown-label">horas</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value">${minutes}</div>
+            <div class="countdown-label">minutos</div>
+        </div>
+        <div class="countdown-item">
+            <div class="countdown-value">${seconds}</div>
+            <div class="countdown-label">segundos</div>
+        </div>
+    `;
 
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menu = document.getElementById('menu');
+    // Se a contagem regressiva terminar, você pode adicionar um código para lidar com isso
+    if (distance < 0) {
+        clearInterval(interval); // Para o intervalo
+        countdownElement.innerHTML = "A contagem regressiva terminou!";
+    }
+}
 
-        menuToggle.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+// Atualiza a contagem regressiva a cada segundo
+const interval = setInterval(updateCountdown, 1000);
+updateCountdown(); 
 
-        // Plans
+// Menu Toggle
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
+    
         const plans = [
-            { name: "Plus 30 dias", price: "17,90", color: "bg-blue-600", features: ["Qualidade 720p", "Globoplay incluso", "Suporte via E-mail", "Atualização Prioritária", "Pacote interativo incluso", "Bônus Extras","+ de 6 streamings"] },
-            { name: "Master 30 dias", price: "25,90", color: "bg-blue-800", features: ["Qualidade 720p e HD", "03 conexões simultâneas", "Assistir em qualquer aparelho", "Netflix incluso", "Atualização Prioritária", "Bônus Extras", "+ de 10 streamings"], popular: true },
+            { name: "Plus 30 dias", price: "16,99", color: "bg-blue-600", features: ["Qualidade 720p", "Globoplay incluso", "Suporte via E-mail", "Atualização Prioritária", "Pacote interativo incluso", "Bônus Extras","+ de 6 streamings"] },
+            { name: "Master 30 dias", price: "32,90", color: "bg-blue-800", features: ["Qualidade 720p e HD", "03 conexões simultâneas", "Assistir em qualquer aparelho", "Netflix incluso", "Atualização Prioritária", "Bônus Extras", "+ de 10 streamings"], popular: true },
             { name: "Star 365 dias", price: "7,49", color: "bg-blue-600", features: ["Qualidade Full HD e 4K (+HDR)", "05 conexões simultâneas", "Assistir em qualquer aparelho", "Liberdade de Sugerir", "Atualização Prioritária", "Bônus Extras", "+ de 12 streamings"] },
         ];
 
@@ -652,7 +660,7 @@
             plansElement.appendChild(planElement);
         });
 
-        // Catalogs
+        
         const catalogs = [
             { name: "Plus", services: ["Globoplay", "Crunchyroll", "Prime Video", "Deezer", "Premiere", "Canva Pro", "Max", "Tidal"] },
             { name: "Master", services: ["Globoplay", "Netflix", "Premiere", "Discovery", "Spotify", "Prime Video", "Crunchyroll", "Paramount", "Star Plus", "YouTube", "Canva", "Max", "Claro Tv", "NBA", "Viki Rakuten", "Sky +"] },
@@ -672,7 +680,7 @@
             catalogsElement.appendChild(catalogElement);
         });
 
-        // Image Gallery
+    
         const images = [
             { src: 'image/netflix.png', alt: 'Logo da Netflix', description: 'Acesso ilimitado a filmes e séries' },
             { src: 'image/disneyyy.png', alt: 'Logo do Disney Plus', description: 'Conteúdo exclusivo da Disney, Pixar, Marvel, Star Wars e National Geographic' },
@@ -694,7 +702,7 @@
             imageGalleryElement.appendChild(imageElement);
         });
 
-        // Testimonials
+    
         const testimonials = [
             { name: "Vagner Silva", comment: "Excelente serviço! A qualidade do streaming é incrível." },
             { name: "Maria Santos", comment: "O plano Master vale cada centavo. Recomendo a todos!" },
@@ -715,7 +723,7 @@
             testimonialsElement.appendChild(testimonialElement);
         });
 
-        // Testimonial Carousel
+        
         let currentTestimonial = 0;
         const testimonialSlides = document.querySelectorAll('.testimonial-slide');
 
@@ -725,9 +733,9 @@
             testimonialSlides[currentTestimonial].classList.add('active');
         }
 
-        setInterval(showNextTestimonial, 5000); // Change testimonial every 5 seconds
+        setInterval(showNextTestimonial, 5000);
 
-        // FAQ
+    
         const faqs = [
             { question: "Como posso assinar um plano?", answer: "Você pode assinar um plano clicando no botão 'ASSINE AGORA' do plano desejado e seguindo as instruções na página de checkout." },
             { question: "Posso cancelar minha assinatura a qualquer momento?", answer: "Sim, você pode cancelar sua assinatura a qualquer momento sem custos adicionais." },
@@ -774,7 +782,7 @@
             renderFAQs(filteredFAQs);
         });
 
-        // Confetti for "ASSINE AGORA" buttons
+        
         document.querySelectorAll('a[href="https://exclusivovip.netlify.app/"]').forEach(button => {
             button.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -789,7 +797,7 @@
             });
         });
 
-        // Smooth scrolling for navigation links
+        
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -799,7 +807,6 @@
             });
         });
 
-        // Intersection Observer for fade-in animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -814,7 +821,7 @@
             observer.observe(el);
         });
 
-        // Back to Top Button
+        
         const backToTopButton = document.getElementById('backToTop');
 
         window.addEventListener('scroll', () => {
@@ -830,7 +837,7 @@
         });
 
 
-        // Pricing Calculator
+
         const planSelect = document.getElementById('plan');
         const durationInput = document.getElementById('duration');
         const totalInput = document.getElementById('total');
@@ -846,21 +853,21 @@
             }
         });
 
-        // Newsletter Subscription
+    
         const newsletterForm = document.getElementById('newsletter-form');
 
         newsletterForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const email = e.target.querySelector('input[type="email"]').value;
-            // Here you would typically send the email to your server
+        
             alert(`Obrigado por se inscrever com o email: ${email}`);
             e.target.reset();
         });
 
-        // User Activity
+
         const userActivityElement = document.getElementById('user-activity');
         const userActivities = [
-            "João acabou de assinar o plano Master",
+            "Guilherme acabou de assinar o plano Master",
             "Maria está assistindo Stranger Things",
             "Pedro adicionou 3 filmes à sua lista",
             "Ana começou uma maratona de Game of Thrones"
@@ -877,7 +884,7 @@
 
         setInterval(showUserActivity, 10000);
 
-        // Content Recommendation
+    
         const recommendationList = document.querySelector('.recommendation-list');
         const recommendations = [
             { title: "Stranger Things", image: "image/STRANGER.png" },
