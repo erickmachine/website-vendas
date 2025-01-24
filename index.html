@@ -388,7 +388,7 @@
 </head>
 <body class="gradient-bg text-white min-h-screen flex flex-col">
     <div class="discount-banner">
-        Use o cupom <span class="text-red-600">DESCONTO30</span> e ganhe 30% de desconto em qualquer plano!
+        Use o cupom <span class="text-red-600">DESCONTO30</span> e ganhe 30% de desconto em plano!
     </div>
 
     <header class="bg-blue-900 bg-opacity-50 backdrop-filter backdrop-blur-md sticky top-0 z-50">
@@ -457,7 +457,7 @@
 
         <section class="my-16 bg-yellow-400 text-black p-8 rounded-lg shadow-lg">
             <h2 class="text-3xl font-bold mb-4">Oferta Especial!</h2>
-            <p class="text-xl mb-4">Use o cupom <span class="font-bold">DESCONTO30</span> durante o checkout e aproveite 30% de desconto em qualquer plano!</p>
+            <p class="text-xl mb-4">Use o cupom <span class="font-bold">DESCONTO30</span> durante o checkout e aproveite 30% de desconto no master e star!</p>
             <p class="text-lg">Não perca essa oportunidade de economizar e desfrutar do melhor conteúdo de streaming.</p>
         </section>
 
@@ -868,9 +868,9 @@ menuToggle.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Add a function to apply the discount
+    
         function applyDiscount(price) {
-            return (price * 0.7).toFixed(2); // 30% discount
+            return (price * 0.7).toFixed(2); 
         }
 
         const planSelect = document.getElementById('plan');
